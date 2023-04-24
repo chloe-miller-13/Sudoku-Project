@@ -459,14 +459,6 @@ class Board:
                 self.cells[i][j].value = self.board[i][j]
                 self.cells[i][j].sketched_value = self.board[i][j]
 
-    def sketch(self, value):
-        pass
-
-    def place_number(self, value):
-        pass
-
-    def reset_to_original(self):
-        pass
 
     def is_full(self):
         for row in self.cells:
@@ -480,8 +472,6 @@ class Board:
             for j in range(9):
                 self.board[i][j] = self.cells[i][j].value
 
-    def find_empty(self):
-        pass
 
     def is_valid(self, numbers):
         numbers.sort()
@@ -511,43 +501,10 @@ class Board:
                 square = [self.cells[x][y].value for x in range(i, i + 3) for y in range(j, j + 3)]
                 if not self.is_valid(square):
                     return False
-
         # If we get here, the board is valid
         return True
 
 
-        '''
-        our_list = []
-        #
-        # for row in completed_board:
-        #     for cell in row:
-        #         print(cell, end=" ")
-        #     print()
-        # print()
-
-        for row in self.cells:
-            row_list = []
-            for cell in row:
-                row_list.append(cell.value)
-            our_list.append(row_list)
-
-        for row in our_list:
-            for cell in row:
-                print(cell, end=" ")
-            print()
-        print()
-
-        # for i in range(9):
-        #     for j in range(9):
-        #         our_value = our_list[i][j]
-        #         print(our_value, end=" ")
-        #         completed_value = completed_board[i][j]
-        #         print(completed_value)
-        #         if our_value != completed_value:
-        #             print(False)
-        #             return False
-        # return True
-        '''
     def start_screen(self):
 
         title_font = pygame.font.Font(None, 150)  # title font
